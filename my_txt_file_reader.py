@@ -15,7 +15,7 @@ def readTehFile(file):
     else:
         print(textFile.read())
         textFile.close()
-        askForFile(input("especifique um caminho pra um arquivo de texto pls: "))
+#        askForFile(input("especifique um caminho pra um arquivo de texto pls: "))
 
 
 
@@ -29,4 +29,4 @@ def askForFile(path):
     elif yesOrNah == "n":
         askForFile(input("especifique um caminho pra um arquivo de texto pls: "))
 
-askForFile(input("especifique um caminho pra um arquivo de texto pls: "))
+#askForFile(input("especifique um caminho pra um arquivo de texto pls: "))
