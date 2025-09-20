@@ -46,7 +46,7 @@ while StringLeft > 0:
     else:
         PalavaEmNumeros.insert(0, alfabeto.index(Palavra[StringLeft-1])) 
     StringLeft -= 1
-print(PalavaEmNumeros)
+#print(PalavaEmNumeros)
 
 Diferenca = random.randint(-5,5)
 while Diferenca == 0:
@@ -56,6 +56,9 @@ Codigo = PalavaEmNumeros
 print("antes da mudança")
 print(Codigo)
 ListAmount = len(Codigo)
+
+
+RandomEffect = random.randint(1,5)
 
 while ListAmount > 0:
     if Codigo[ListAmount-1] == "space" or Codigo[ListAmount-1] == 'invalid':
@@ -67,8 +70,6 @@ while ListAmount > 0:
         NumEven = True
     else:
         NumEven = False
-    
-    RandomEffect = random.randint(1,5)
 
     if NumEven == True:
         Codigo[ListAmount-1] += RandomEffect
@@ -80,7 +81,7 @@ while ListAmount > 0:
 
 print("depois da mudança")
 print(Codigo)
-
+print('o número aleatório é' + str(RandomEffect))
 def ConverterNumStr(List):
     global alfabeto
     print(alfabeto)
@@ -92,23 +93,28 @@ def ConverterNumStr(List):
         while List[ListLength-1] >= len(alfabeto)-1:
             List[ListLength-1] -= 26
             print("ultrapassou")
-
         if List[ListLength-1] == "space":
             convertedList.insert(0, " ")
             ListLength -= 1
             continue
-        
         elif List[ListLength-1] == "invalid":
             ListLength -= 1
             continue
-
         elif len(alfabeto) >= List[ListLength-1] >= -1:
             convertedList.insert(0, alfabeto[List[ListLength-1]])
-
         else:
             ListLength -= 1
             continue
         ListLength -= 1
+
+    ListLength = len(List)
+    print(convertedList)
+    print(len(convertedList))
+    text = ""
+    while ListLength > 0:
+        text = convertedList[ListLength-1] + text
+        ListLength -= 1
+    print(text)
 
     return convertedList
 
